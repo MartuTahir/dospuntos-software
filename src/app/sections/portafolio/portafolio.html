@@ -19,22 +19,36 @@
           [revealDelay]="i * 80"
           class="group flex flex-col overflow-hidden rounded-xl border border-outline-variant/40 bg-surface-container-lowest shadow-ambient transition-all duration-300 hover:-translate-y-1 hover:shadow-ambient-lg"
         >
-          <!-- Mockup provisorio. COMPLETAR: reemplazar por una captura real del sitio. -->
-          <div
-            class="relative flex aspect-video items-center justify-center bg-gradient-to-br from-surface-container to-surface-variant"
-            aria-hidden="true"
-          >
-            <span class="absolute left-4 top-4 flex gap-1.5">
-              <span class="h-2 w-2 rounded-full bg-outline-variant"></span>
-              <span class="h-2 w-2 rounded-full bg-outline-variant"></span>
-              <span class="h-2 w-2 rounded-full bg-outline-variant"></span>
-            </span>
-            <lucide-icon
-              [name]="proyecto.icono"
-              [size]="56"
-              class="text-primary-container/25 transition-transform duration-300 group-hover:scale-110"
-            />
-          </div>
+          @if (proyecto.imagen) {
+            <div class="aspect-video overflow-hidden bg-surface-container">
+              <img
+                [src]="proyecto.imagen"
+                [alt]="'Captura del sitio de ' + proyecto.nombre"
+                width="1880"
+                height="890"
+                loading="lazy"
+                decoding="async"
+                class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          } @else {
+            <!-- Todavia sin captura: se muestra el icono del rubro. -->
+            <div
+              class="relative flex aspect-video items-center justify-center bg-gradient-to-br from-surface-container to-surface-variant"
+              aria-hidden="true"
+            >
+              <span class="absolute left-4 top-4 flex gap-1.5">
+                <span class="h-2 w-2 rounded-full bg-outline-variant"></span>
+                <span class="h-2 w-2 rounded-full bg-outline-variant"></span>
+                <span class="h-2 w-2 rounded-full bg-outline-variant"></span>
+              </span>
+              <lucide-icon
+                [name]="proyecto.icono"
+                [size]="56"
+                class="text-primary-container/25 transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+          }
 
           <div class="flex flex-grow flex-col p-6">
             <span

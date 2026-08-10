@@ -29,7 +29,11 @@ export interface Proyecto {
   rubro: string;
   paquete: string;
   resultado: string;
+  /** Icono de respaldo: se muestra solo si todavia no hay captura. */
   icono: string;
+  /** Captura del sitio, dentro de la carpeta `public`. Ej: '/luna-fit.png'.
+   *  Se recorta desde arriba, asi que lo que se ve es el encabezado del sitio. */
+  imagen: string;
   enlace: string;
 }
 
@@ -209,6 +213,7 @@ export const PROYECTOS: Proyecto[] = [
     paquete: 'Landing page',
     resultado: 'Una página con sus planes y un botón para empezar a entrenar hoy.',
     icono: 'Dumbbell',
+    imagen: '/luna-fit.png',
     enlace: 'https://lunafit.netlify.app/',
   },
   {
@@ -217,6 +222,7 @@ export const PROYECTOS: Proyecto[] = [
     paquete: 'Landing page',
     resultado: 'Fotos grandes de cada torta y los pedidos entran directo por WhatsApp.',
     icono: 'CakeSlice',
+    imagen: '/dulce-antojo.png',
     enlace: 'https://antojosdulces.netlify.app/',
   },
   {
@@ -225,6 +231,7 @@ export const PROYECTOS: Proyecto[] = [
     paquete: 'Sitio informativo',
     resultado: 'Sus servicios explicados claro y un contacto que transmite confianza.',
     icono: 'Landmark',
+    imagen: '/estudio-herrera.png',
     enlace: 'https://herrerayasoc.netlify.app/',
   },
   {
@@ -233,16 +240,23 @@ export const PROYECTOS: Proyecto[] = [
     paquete: 'Sitio informativo',
     resultado: 'Horarios a la vista, el equipo presentado y cómo llegar al local.',
     icono: 'PawPrint',
+    imagen: '/patitas-sur.png',
     enlace: 'https://patitasdelsur.netlify.app/',
   },
-  {
-    nombre: 'Clínica Sonría',
-    rubro: 'Odontología',
-    paquete: 'Sitio premium',
-    resultado: 'Turnos online y notas de salud que la clínica actualiza sola.',
-    icono: 'Stethoscope',
-    enlace: '#',
-  },
+  // ---------------------------------------------------------------
+  // PENDIENTE: Clinica Sonria todavia no esta terminada.
+  // Para que vuelva al sitio: borrar las barras de adelante, cargar la
+  // captura en `public` y poner la direccion real en `enlace`.
+  // ---------------------------------------------------------------
+  // {
+  //   nombre: 'Clínica Sonría',
+  //   rubro: 'Odontología',
+  //   paquete: 'Sitio premium',
+  //   resultado: 'Turnos online y notas de salud que la clínica actualiza sola.',
+  //   icono: 'Stethoscope',
+  //   imagen: '/clinica-sonria.png',
+  //   enlace: 'https://clinicasonria.netlify.app/',
+  // },
 ];
 
 // ============================================================
@@ -282,7 +296,7 @@ export const NOSOTRAS = {
   parrafos: [
     // COMPLETAR: reescribir con las palabras de ustedes.
     'DosPuntos nació de dos desarrolladoras que se cansaron de ver buenos negocios con una presencia en internet que no les hacía justicia.',
-    'Somos Martina y Julieta y trabajamos en convertir tu idea en realidad. Las dos estamos en cada proyecto, así que siempre hay alguien que conoce tu web de memoria. Nos escribís y te contestamos nosotras, no un chatbot.',
+    'Somos Martina y Julieta, juntas trabajamos en convertir tu idea en realidad. Las dos estamos en cada proyecto, así que siempre hay alguien que conoce tu web de memoria. Nos escribís y te contestamos nosotras, no un chatbot.',
   ],
   /** Va arriba de las dos tarjetas. Que las dos hagan todo no es una carencia:
    *  es la diferencia contra una agencia, donde el cliente repite su problema
@@ -326,7 +340,7 @@ export const CONTACTO = {
 
 export const PIE = {
   descripcion: 'Páginas web para negocios y profesionales que quieren que los encuentren.',
-  ciudad: 'Argentina', // COMPLETAR: ciudad o zona
+  ciudad: 'Córdoba, Argentina', // COMPLETAR: ciudad o zona
   enlaceCotizacion: 'Pedí una cotización sin compromiso',
 };
 
