@@ -47,7 +47,7 @@ export interface Valor {
 
 export interface Socia {
   nombre: string;
-  rol: string;
+  /** Como trabaja, en primera persona. No es un puesto: las dos hacen de todo. */
   descripcion: string;
   /** Ruta de la foto dentro de la carpeta `public`, por ejemplo '/socias/martina.jpg'.
    *  Si se deja vacio, se muestra la inicial del nombre en un circulo de color. */
@@ -288,24 +288,26 @@ export const NOSOTRAS = {
     'DosPuntos nació de dos desarrolladoras que se cansaron de ver buenos negocios con una presencia en internet que no les hacía justicia.',
     'Somos Martina y Julieta y trabajamos en convertir tu idea en realidad. Las dos estamos en cada proyecto, así que siempre hay alguien que conoce tu web de memoria. Nos escribís y te contestamos nosotras, no un chatbot.',
   ],
-  /** REVISAR: los roles estan repartidos a ojo. Si es al reves, se dan vuelta
-   *  los dos objetos y listo.
+  /** Va arriba de las dos tarjetas. Que las dos hagan todo no es una carencia:
+   *  es la diferencia contra una agencia, donde el cliente repite su problema
+   *  en cada area por la que pasa. */
+  comoTrabajamos:
+    'Las dos hacemos todo: diseñamos, programamos y te contestamos. Nos repartimos según el proyecto, pero siempre sabés con quién estás hablando.',
+
+  /** REVISAR: las descripciones las escribi yo de borrador. Cambienlas por como
+   *  se describirian ustedes — cuanto mas propias suenen, mejor funcionan.
    *  Para la foto: guardar la imagen en `public/socias/` y poner aca la ruta,
    *  por ejemplo '/socias/martina.jpg'. Sirve cuadrada y de al menos 400x400.
    *  Mientras este vacio se muestra la inicial, asi que nunca se ve rota. */
   socias: [
     {
       nombre: 'Martina',
-      rol: 'Diseño',
-      descripcion:
-        'Me encargo de que tu web se vea como el negocio que tenés en la cabeza, no como una plantilla.',
+      descripcion: 'Me gusta pelearla hasta que cada detalle cierra.',
       foto: '',
     },
     {
       nombre: 'Julieta',
-      rol: 'Desarrollo',
-      descripcion:
-        'Me encargo de que funcione: que abra rápido, que se vea bien en el celular y que no se rompa.',
+      descripcion: 'No suelto una web hasta que vuela en el celular.',
       foto: '',
     },
   ] as Socia[],
