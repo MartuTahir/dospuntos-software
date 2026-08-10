@@ -26,18 +26,24 @@
           class="flex flex-col items-center rounded-xl border border-outline-variant/40 bg-surface-container-lowest p-8 text-center shadow-ambient"
         >
           @if (socia.foto) {
+            <!-- OJO: el `grayscale` no es un capricho estetico, resuelve un
+                 problema concreto. Las fotos estan sacadas en lugares y con
+                 luces distintas; en blanco y negro esa diferencia deja de
+                 notarse y las dos leen como un set hecho a proposito.
+                 Si se saca, vuelve a verse el desajuste de fondos. -->
             <img
               [src]="socia.foto"
               [alt]="'Foto de ' + socia.nombre"
               width="112"
               height="112"
               loading="lazy"
-              class="mb-5 h-28 w-28 rounded-full object-cover"
+              decoding="async"
+              class="mb-5 h-28 w-28 rounded-full object-cover grayscale contrast-105 ring-4 ring-primary-container/15"
             />
           } @else {
             <!-- Sin foto cargada todavia: se muestra la inicial. -->
             <span
-              class="mb-5 flex h-28 w-28 items-center justify-center rounded-full bg-primary-container text-headline-xl text-on-primary"
+              class="mb-5 flex h-28 w-28 items-center justify-center rounded-full bg-primary-container text-headline-xl text-on-primary ring-4 ring-primary-container/15"
               aria-hidden="true"
             >
               {{ socia.nombre.charAt(0) }}
