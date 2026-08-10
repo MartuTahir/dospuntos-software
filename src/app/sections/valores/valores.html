@@ -1,0 +1,20 @@
+<section class="bg-surface-container-low px-margin-mobile py-16 md:px-margin-desktop">
+  <ul
+    class="mx-auto flex max-w-container-max flex-col justify-around gap-stack-lg md:flex-row md:gap-12"
+  >
+    @for (valor of valores; track valor.titulo; let i = $index) {
+      <li class="flex items-center gap-4" appReveal [revealDelay]="i * 90">
+        <span
+          class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary-container/10 text-primary-container"
+          aria-hidden="true"
+        >
+          <lucide-icon [name]="valor.icono" [size]="26" />
+        </span>
+        <span>
+          <h2 class="text-body-md font-bold text-primary">{{ valor.titulo }}</h2>
+          <p class="text-label-sm font-normal text-on-surface-variant">{{ valor.detalle }}</p>
+        </span>
+      </li>
+    }
+  </ul>
+</section>

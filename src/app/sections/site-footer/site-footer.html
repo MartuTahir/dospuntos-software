@@ -1,0 +1,79 @@
+<footer
+  class="border-t border-outline-variant/30 bg-surface-container-lowest px-margin-mobile py-16 md:px-margin-desktop"
+>
+  <div class="mx-auto max-w-container-max">
+    <div class="mb-12 grid grid-cols-1 gap-stack-lg md:grid-cols-4">
+      <div class="md:col-span-2">
+        <p class="mb-4 text-headline-md font-bold text-primary">
+          Dos<span class="text-primary-container">:</span>Puntos
+        </p>
+        <p class="mb-6 max-w-sm text-body-md text-on-surface-variant">{{ pie.descripcion }}</p>
+        <a
+          [href]="instagramUrl"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex min-h-[44px] w-fit items-center gap-2 text-label-md text-on-surface-variant transition-colors hover:text-primary"
+        >
+          <lucide-icon name="Instagram" [size]="20" />
+          &#64;{{ instagramUsuario }}
+        </a>
+      </div>
+
+      <nav aria-label="Pie de página">
+        <h2 class="mb-4 text-label-md font-bold text-primary">Secciones</h2>
+        <ul>
+          @for (enlace of navegacion; track enlace.ancla) {
+            <li>
+              <a
+                [href]="enlace.ancla"
+                class="inline-flex min-h-[44px] items-center text-label-md font-normal text-on-surface-variant transition-colors hover:text-primary"
+              >
+                {{ enlace.texto }}
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="mb-4 text-label-md font-bold text-primary">Contacto</h2>
+        <a
+          [href]="whatsappUrl"
+          target="_blank"
+          rel="noopener"
+          class="flex min-h-[44px] w-fit items-center gap-2 text-label-md font-normal text-on-surface-variant transition-colors hover:text-primary"
+        >
+          <lucide-icon name="MessageCircle" [size]="18" />
+          WhatsApp
+        </a>
+        <a
+          [href]="'mailto:' + email"
+          class="mb-2 flex min-h-[44px] w-fit items-center gap-2 text-label-md font-normal text-on-surface-variant transition-colors hover:text-primary"
+        >
+          <lucide-icon name="Mail" [size]="18" />
+          {{ email }}
+        </a>
+        <p class="flex items-center gap-2 text-label-sm font-normal text-on-surface-variant">
+          <lucide-icon name="MapPin" [size]="16" />
+          {{ pie.ciudad }}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col items-center justify-between gap-4 border-t border-outline-variant/40 pt-8 md:flex-row"
+    >
+      <p class="text-label-sm font-normal text-on-surface-variant">
+        © {{ anio }} DosPuntos
+      </p>
+      <a
+        [href]="whatsappUrl"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex min-h-[44px] items-center text-label-sm font-normal text-on-surface-variant underline underline-offset-4 transition-colors hover:text-primary"
+      >
+        {{ pie.enlaceCotizacion }}
+      </a>
+    </div>
+  </div>
+</footer>

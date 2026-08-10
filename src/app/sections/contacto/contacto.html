@@ -1,0 +1,111 @@
+<section
+  id="contacto"
+  class="bg-primary-container px-margin-mobile py-20 text-on-primary md:px-margin-desktop md:py-section-padding"
+>
+  <div class="mx-auto grid max-w-container-max grid-cols-1 gap-stack-lg lg:grid-cols-2 lg:gap-16">
+    <div>
+      <h2 class="mb-4 text-headline-lg-mobile md:text-headline-xl">{{ textos.titulo }}</h2>
+      <p class="mb-stack-lg max-w-xl text-body-lg opacity-90">{{ textos.bajada }}</p>
+
+      <a
+        [href]="whatsappUrl"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-3 rounded-full bg-secondary-container px-8 py-5 text-body-lg font-bold text-on-secondary-fixed shadow-ambient-lg transition-transform hover:scale-105 active:scale-95"
+      >
+        <lucide-icon name="MessageCircle" [size]="26" />
+        {{ textos.textoBotonWhatsapp }}
+      </a>
+
+      <a
+        [href]="instagramUrl"
+        target="_blank"
+        rel="noopener"
+        class="mt-stack-md inline-flex min-h-[44px] w-fit items-center gap-2 text-label-md opacity-90 transition-opacity hover:opacity-100"
+      >
+        <lucide-icon name="Instagram" [size]="20" />
+        &#64;{{ instagramUsuario }}
+      </a>
+    </div>
+
+    <div class="rounded-xl border border-white/20 bg-white/10 p-6 backdrop-blur-md md:p-8">
+      <h3 class="mb-6 text-headline-md">{{ textos.textoFormulario }}</h3>
+
+      @if (estado() === 'enviado') {
+        <p class="rounded-md bg-white/15 p-4 text-body-md" role="status">
+          ¡Listo! Recibimos tu mensaje y te escribimos a la brevedad.
+        </p>
+      } @else {
+        <form [formGroup]="formulario" (ngSubmit)="enviar()" novalidate class="space-y-stack-md">
+          <div>
+            <label for="nombre" class="mb-1.5 block text-label-md">Tu nombre</label>
+            <input
+              id="nombre"
+              type="text"
+              formControlName="nombre"
+              autocomplete="name"
+              class="w-full rounded-md border-2 border-white/25 bg-white/10 p-4 text-body-md text-on-primary placeholder:text-white/50 focus:border-secondary-container focus:outline-none"
+              placeholder="María"
+              [attr.aria-invalid]="tieneError('nombre')"
+            />
+            @if (tieneError('nombre')) {
+              <p class="mt-1.5 text-label-sm text-secondary-container" role="alert">
+                Escribinos cómo te llamás.
+              </p>
+            }
+          </div>
+
+          <div>
+            <label for="whatsapp" class="mb-1.5 block text-label-md">Tu WhatsApp</label>
+            <input
+              id="whatsapp"
+              type="tel"
+              inputmode="tel"
+              formControlName="whatsapp"
+              autocomplete="tel"
+              class="w-full rounded-md border-2 border-white/25 bg-white/10 p-4 text-body-md text-on-primary placeholder:text-white/50 focus:border-secondary-container focus:outline-none"
+              placeholder="11 5555 5555"
+              [attr.aria-invalid]="tieneError('whatsapp')"
+            />
+            @if (tieneError('whatsapp')) {
+              <p class="mt-1.5 text-label-sm text-secondary-container" role="alert">
+                Necesitamos un número para poder contestarte.
+              </p>
+            }
+          </div>
+
+          <div>
+            <label for="necesidad" class="mb-1.5 block text-label-md">¿Qué necesitás?</label>
+            <textarea
+              id="necesidad"
+              rows="4"
+              formControlName="necesidad"
+              class="w-full rounded-md border-2 border-white/25 bg-white/10 p-4 text-body-md text-on-primary placeholder:text-white/50 focus:border-secondary-container focus:outline-none"
+              placeholder="Tengo una peluquería y quiero que me encuentren en internet."
+              [attr.aria-invalid]="tieneError('necesidad')"
+            ></textarea>
+            @if (tieneError('necesidad')) {
+              <p class="mt-1.5 text-label-sm text-secondary-container" role="alert">
+                Contanos un poco más, aunque sea en una frase.
+              </p>
+            }
+          </div>
+
+          @if (estado() === 'error') {
+            <p class="rounded-md bg-error-container p-4 text-label-md text-on-error-container" role="alert">
+              No pudimos enviar el mensaje. Probá de nuevo o escribinos por WhatsApp.
+            </p>
+          }
+
+          <button
+            type="submit"
+            [disabled]="estado() === 'enviando'"
+            class="w-full rounded-full bg-secondary-container py-4 font-bold text-on-secondary-fixed transition-all hover:brightness-105 disabled:opacity-50"
+          >
+            {{ estado() === 'enviando' ? 'Enviando…' : 'Enviar' }}
+          </button>
+        </form>
+      }
+    </div>
+  </div>
+</section>

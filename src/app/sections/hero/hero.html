@@ -1,0 +1,77 @@
+<section
+  class="relative overflow-hidden px-margin-mobile pb-20 pt-16 md:px-margin-desktop md:pb-section-padding md:pt-24"
+>
+  <div
+    class="relative z-10 mx-auto grid max-w-container-max grid-cols-1 items-center gap-stack-lg lg:grid-cols-2 lg:gap-16"
+  >
+    <div class="space-y-stack-lg">
+      <h1 class="text-headline-lg-mobile text-primary md:text-headline-xl">
+        {{ hero.titulo }}
+      </h1>
+
+      <p class="max-w-xl text-body-lg text-on-surface-variant">
+        {{ hero.bajada }}
+      </p>
+
+      <div class="flex flex-col gap-stack-md sm:flex-row">
+        <a
+          [href]="whatsappUrl"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center justify-center gap-2 rounded-full bg-primary-container px-8 py-4 text-body-lg font-semibold text-on-primary shadow-ambient-lg transition-transform hover:scale-[1.03] active:scale-95"
+        >
+          <lucide-icon name="MessageCircle" [size]="22" />
+          {{ hero.botonPrincipal }}
+        </a>
+
+        <a
+          href="#portafolio"
+          class="flex items-center justify-center gap-2 rounded-full border-2 border-primary-container px-8 py-4 text-body-lg font-semibold text-primary transition-colors hover:bg-primary-container hover:text-on-primary"
+        >
+          {{ hero.botonSecundario }}
+          <lucide-icon name="ArrowRight" [size]="20" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Ilustracion provisoria. COMPLETAR: reemplazar por una foto o captura
+         real de un trabajo cuando haya una de buena calidad. -->
+    <div class="relative mt-stack-lg lg:mt-0">
+      <svg
+        viewBox="0 0 440 340"
+        class="w-full drop-shadow-xl md:rotate-2"
+        role="img"
+        aria-label="Ilustración de una página web vista en una computadora y en un celular"
+      >
+        <rect x="20" y="20" width="360" height="240" rx="16" fill="#ffffff" />
+        <rect x="20" y="20" width="360" height="36" rx="16" fill="#4c1d95" />
+        <rect x="20" y="44" width="360" height="12" fill="#4c1d95" />
+        <circle cx="42" cy="38" r="5" fill="#fcd34d" />
+        <circle cx="60" cy="38" r="5" fill="#fb7185" />
+        <circle cx="78" cy="38" r="5" fill="#ffffff" opacity="0.5" />
+        <rect x="44" y="82" width="150" height="16" rx="8" fill="#340075" />
+        <rect x="44" y="110" width="200" height="10" rx="5" fill="#ccc3d4" />
+        <rect x="44" y="128" width="170" height="10" rx="5" fill="#ccc3d4" />
+        <rect x="44" y="158" width="96" height="30" rx="15" fill="#fcd34d" />
+        <rect x="264" y="82" width="92" height="106" rx="12" fill="#edeeef" />
+        <rect x="44" y="208" width="100" height="32" rx="12" fill="#f3f4f5" />
+        <rect x="156" y="208" width="100" height="32" rx="12" fill="#f3f4f5" />
+        <rect x="268" y="208" width="88" height="32" rx="12" fill="#f3f4f5" />
+        <rect x="300" y="150" width="118" height="180" rx="20" fill="#ffffff" stroke="#e1e3e4" stroke-width="2" />
+        <rect x="312" y="176" width="94" height="60" rx="10" fill="#4c1d95" />
+        <rect x="312" y="248" width="70" height="9" rx="4.5" fill="#ccc3d4" />
+        <rect x="312" y="264" width="52" height="9" rx="4.5" fill="#ccc3d4" />
+        <rect x="312" y="288" width="94" height="26" rx="13" fill="#fcd34d" />
+      </svg>
+
+      <div
+        class="absolute -right-12 -top-12 -z-10 h-64 w-64 rounded-full bg-secondary-container opacity-40 blur-[100px]"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute -bottom-12 -left-12 -z-10 h-80 w-80 rounded-full bg-primary-container opacity-20 blur-[120px]"
+        aria-hidden="true"
+      ></div>
+    </div>
+  </div>
+</section>

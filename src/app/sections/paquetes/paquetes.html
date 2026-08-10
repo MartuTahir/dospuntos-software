@@ -1,0 +1,136 @@
+<section
+  id="paquetes"
+  class="bg-surface-container-lowest px-margin-mobile py-20 md:px-margin-desktop md:py-section-padding"
+>
+  <div class="mx-auto max-w-container-max">
+    <header class="mb-12 text-center">
+      <h2 class="mb-4 text-headline-lg-mobile text-primary md:text-headline-lg">
+        Elegí cómo querés empezar
+      </h2>
+      <p class="mx-auto max-w-2xl text-body-md text-on-surface-variant">
+        Tres opciones, sin letra chica. Si no sabés cuál te sirve, escribinos y lo vemos juntas.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 items-stretch gap-8 md:grid-cols-3">
+      @for (paquete of paquetes; track paquete.id; let i = $index) {
+        <article
+          appReveal
+          [revealDelay]="i * 110"
+          class="relative flex flex-col rounded-xl p-8"
+          [class]="
+            paquete.destacado
+              ? 'bg-primary-container text-on-primary shadow-ambient-lg md:scale-105 z-10'
+              : 'bg-surface border border-outline-variant shadow-ambient hover:shadow-ambient-lg hover:-translate-y-1 transition-all duration-300'
+          "
+        >
+          @if (paquete.etiqueta) {
+            <span
+              class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-secondary-container px-4 py-1 text-label-sm uppercase tracking-wider text-on-secondary-fixed"
+            >
+              {{ paquete.etiqueta }}
+            </span>
+          }
+
+          <h3 class="text-headline-md" [class]="paquete.destacado ? '' : 'text-primary'">
+            {{ paquete.nombre }}
+          </h3>
+          <p
+            class="mt-1 text-label-md font-normal"
+            [class]="paquete.destacado ? 'opacity-80' : 'text-on-surface-variant'"
+          >
+            {{ paquete.bajada }}
+          </p>
+
+          <p class="mt-6">
+            <span
+              class="block text-label-sm font-normal"
+              [class]="paquete.destacado ? 'opacity-80' : 'text-on-surface-variant'"
+              >{{ paquete.prefijoPrecio }}</span
+            >
+            <span class="text-headline-xl" [class]="paquete.destacado ? '' : 'text-primary'">{{
+              paquete.precio
+            }}</span>
+          </p>
+
+          <p
+            class="mb-6 mt-4 text-body-md"
+            [class]="paquete.destacado ? 'opacity-90' : 'text-on-surface-variant'"
+          >
+            {{ paquete.paraQuien }}
+          </p>
+
+          <ul class="mb-8 flex-grow space-y-3">
+            @for (item of paquete.incluye; track item) {
+              <li class="flex items-start gap-2 text-body-md">
+                <lucide-icon
+                  name="Check"
+                  [size]="18"
+                  class="mt-1 shrink-0"
+                  [class]="paquete.destacado ? 'text-secondary-container' : 'text-primary-container'"
+                  aria-hidden="true"
+                />
+                <span [class]="paquete.destacado ? '' : 'text-on-surface-variant'">{{ item }}</span>
+              </li>
+            }
+          </ul>
+
+          <a
+            [href]="whatsappUrl"
+            target="_blank"
+            rel="noopener"
+            class="rounded-full py-4 text-center font-bold transition-all"
+            [class]="
+              paquete.destacado
+                ? 'bg-secondary-container text-on-secondary-fixed hover:brightness-105'
+                : 'border-2 border-primary-container text-primary hover:bg-primary-container hover:text-on-primary'
+            "
+          >
+            {{ paquete.textoBoton }}
+          </a>
+        </article>
+      }
+    </div>
+
+    <!-- Mantenimiento mensual: aplica a cualquiera de los tres planes. -->
+    <div
+      appReveal
+      class="mt-16 flex flex-col items-center gap-stack-lg rounded-2xl bg-primary-container p-8 text-on-primary md:flex-row md:p-12"
+    >
+      <div class="flex-1">
+        <h3 class="mb-4 text-headline-lg-mobile md:text-headline-lg">{{ mantenimiento.titulo }}</h3>
+        <p class="text-body-lg opacity-90">{{ mantenimiento.bajada }}</p>
+      </div>
+
+      <div
+        class="w-full rounded-xl border border-white/20 bg-white/10 p-8 backdrop-blur-md md:w-auto md:min-w-[320px]"
+      >
+        <h4 class="text-headline-md">{{ mantenimiento.nombre }}</h4>
+        <p class="mb-6 mt-2 text-headline-xl">
+          {{ mantenimiento.precio }}<span class="text-label-md">{{ mantenimiento.periodo }}</span>
+        </p>
+        <ul class="mb-8 space-y-3">
+          @for (item of mantenimiento.incluye; track item) {
+            <li class="flex items-start gap-2 text-body-md">
+              <lucide-icon
+                name="Check"
+                [size]="18"
+                class="mt-1 shrink-0 text-secondary-container"
+                aria-hidden="true"
+              />
+              {{ item }}
+            </li>
+          }
+        </ul>
+        <a
+          [href]="whatsappUrl"
+          target="_blank"
+          rel="noopener"
+          class="block rounded-full bg-secondary-container py-3 text-center font-bold text-on-secondary-fixed transition-all hover:brightness-105"
+        >
+          {{ mantenimiento.textoBoton }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

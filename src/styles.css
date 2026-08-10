@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* El header fijo mide 80px: evita que los anclajes tapen los titulos. */
+    scroll-padding-top: 96px;
+  }
+
+  body {
+    @apply bg-background text-on-background font-sans antialiased;
+  }
+
+  /* Foco visible para navegacion con teclado (accesibilidad). */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-container ring-offset-2 ring-offset-background;
+  }
+}
+
+/* Animacion de entrada al hacer scroll. La directiva appReveal agrega
+   .is-revealed cuando el elemento entra en pantalla. */
+@layer components {
+  .reveal {
+    @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+  }
+
+  .reveal.is-revealed {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* Quien configuro su sistema para reducir animaciones, no ve ninguna. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    @apply opacity-100 translate-y-0;
+  }
+}

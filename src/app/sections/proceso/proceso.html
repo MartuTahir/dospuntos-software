@@ -1,0 +1,53 @@
+<section
+  id="proceso"
+  class="bg-surface-container-lowest px-margin-mobile py-20 md:px-margin-desktop md:py-section-padding"
+>
+  <div class="mx-auto max-w-container-max">
+    <h2 class="mb-12 text-center text-headline-lg-mobile text-primary md:mb-16 md:text-headline-lg">
+      Cómo trabajamos, paso a paso
+    </h2>
+
+    <!-- Escritorio: linea horizontal con los 5 pasos -->
+    <ol class="relative hidden lg:flex lg:justify-between">
+      <span
+        class="absolute left-0 top-6 -z-0 h-0.5 w-full bg-outline-variant"
+        aria-hidden="true"
+      ></span>
+
+      @for (paso of pasos; track paso.titulo; let i = $index) {
+        <li
+          appReveal
+          [revealDelay]="i * 110"
+          class="relative z-10 flex max-w-[180px] flex-col items-center text-center"
+        >
+          <span
+            class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-container text-on-primary ring-8 ring-surface-container-lowest"
+            aria-hidden="true"
+          >
+            <lucide-icon [name]="paso.icono" [size]="22" />
+          </span>
+          <h3 class="mb-2 text-body-md font-bold text-primary">{{ paso.titulo }}</h3>
+          <p class="text-label-sm font-normal text-on-surface-variant">{{ paso.detalle }}</p>
+        </li>
+      }
+    </ol>
+
+    <!-- Celular: lista vertical numerada -->
+    <ol class="flex flex-col gap-8 lg:hidden">
+      @for (paso of pasos; track paso.titulo; let i = $index) {
+        <li appReveal [revealDelay]="i * 80" class="flex gap-4">
+          <span
+            class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-container font-bold text-on-primary"
+            aria-hidden="true"
+          >
+            {{ i + 1 }}
+          </span>
+          <span>
+            <h3 class="text-body-md font-bold text-primary">{{ paso.titulo }}</h3>
+            <p class="text-body-md text-on-surface-variant">{{ paso.detalle }}</p>
+          </span>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

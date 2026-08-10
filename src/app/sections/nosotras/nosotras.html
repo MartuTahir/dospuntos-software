@@ -1,0 +1,60 @@
+<section id="nosotras" class="px-margin-mobile py-20 md:px-margin-desktop md:py-section-padding">
+  <div class="mx-auto max-w-container-max">
+    <div appReveal class="mx-auto max-w-3xl text-center">
+      <h2 class="mb-6 text-headline-lg-mobile text-primary md:text-headline-lg">
+        {{ nosotras.titulo }}
+      </h2>
+
+      @for (parrafo of nosotras.parrafos; track parrafo) {
+        <p class="mb-4 text-body-lg text-on-surface-variant">{{ parrafo }}</p>
+      }
+    </div>
+
+    <ul class="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-8 sm:grid-cols-2">
+      @for (socia of nosotras.socias; track socia.rol; let i = $index) {
+        <li
+          appReveal
+          [revealDelay]="i * 120"
+          class="flex flex-col items-center rounded-xl border border-outline-variant/40 bg-surface-container-lowest p-8 text-center shadow-ambient"
+        >
+          @if (socia.foto) {
+            <img
+              [src]="socia.foto"
+              [alt]="'Foto de ' + socia.nombre"
+              width="112"
+              height="112"
+              loading="lazy"
+              class="mb-5 h-28 w-28 rounded-full object-cover"
+            />
+          } @else {
+            <!-- Sin foto cargada todavia: se muestra la inicial. -->
+            <span
+              class="mb-5 flex h-28 w-28 items-center justify-center rounded-full bg-primary-container text-headline-xl text-on-primary"
+              aria-hidden="true"
+            >
+              {{ socia.nombre.charAt(0) }}
+            </span>
+          }
+
+          <h3 class="text-headline-md text-primary">{{ socia.nombre }}</h3>
+
+          <p
+            class="mt-2 rounded-full bg-secondary-container/40 px-3 py-1 text-label-sm uppercase tracking-wider text-on-secondary-container"
+          >
+            {{ socia.rol }}
+          </p>
+
+          <p class="mt-4 text-body-md text-on-surface-variant">{{ socia.descripcion }}</p>
+        </li>
+      }
+    </ul>
+
+    <p
+      appReveal
+      class="mx-auto mt-12 max-w-xl text-center text-body-md italic text-on-surface-variant"
+    >
+      <span class="text-headline-md font-extrabold not-italic text-primary-container">:</span>
+      {{ nosotras.notaLogo }}
+    </p>
+  </div>
+</section>
