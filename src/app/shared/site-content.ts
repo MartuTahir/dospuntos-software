@@ -31,7 +31,7 @@ export interface Proyecto {
   resultado: string;
   /** Icono de respaldo: se muestra solo si todavia no hay captura. */
   icono: string;
-  /** Captura del sitio, dentro de la carpeta `public`. Ej: '/luna-fit.png'.
+  /** Captura del sitio, dentro de la carpeta `public`. Ej: '/luna-fit.webp'.
    *  Se recorta desde arriba, asi que lo que se ve es el encabezado del sitio. */
   imagen: string;
   enlace: string;
@@ -213,7 +213,7 @@ export const PROYECTOS: Proyecto[] = [
     paquete: 'Landing page',
     resultado: 'Una página con sus planes y un botón para empezar a entrenar hoy.',
     icono: 'Dumbbell',
-    imagen: '/luna-fit.png',
+    imagen: '/luna-fit.webp',
     enlace: 'https://lunafit.netlify.app/',
   },
   {
@@ -222,7 +222,7 @@ export const PROYECTOS: Proyecto[] = [
     paquete: 'Landing page',
     resultado: 'Fotos grandes de cada torta y los pedidos entran directo por WhatsApp.',
     icono: 'CakeSlice',
-    imagen: '/dulce-antojo.png',
+    imagen: '/dulce-antojo.webp',
     enlace: 'https://antojosdulces.netlify.app/',
   },
   {
@@ -231,7 +231,7 @@ export const PROYECTOS: Proyecto[] = [
     paquete: 'Sitio informativo',
     resultado: 'Sus servicios explicados claro y un contacto que transmite confianza.',
     icono: 'Landmark',
-    imagen: '/estudio-herrera.png',
+    imagen: '/estudio-herrera.webp',
     enlace: 'https://herrerayasoc.netlify.app/',
   },
   {
@@ -240,7 +240,7 @@ export const PROYECTOS: Proyecto[] = [
     paquete: 'Sitio informativo',
     resultado: 'Horarios a la vista, el equipo presentado y cómo llegar al local.',
     icono: 'PawPrint',
-    imagen: '/patitas-sur.png',
+    imagen: '/patitas-sur.webp',
     enlace: 'https://patitasdelsur.netlify.app/',
   },
   // ---------------------------------------------------------------
@@ -254,7 +254,7 @@ export const PROYECTOS: Proyecto[] = [
   //   paquete: 'Sitio premium',
   //   resultado: 'Turnos online y notas de salud que la clínica actualiza sola.',
   //   icono: 'Stethoscope',
-  //   imagen: '/clinica-sonria.png',
+  //   imagen: '/clinica-sonria.webp',
   //   enlace: 'https://clinicasonria.netlify.app/',
   // },
 ];
