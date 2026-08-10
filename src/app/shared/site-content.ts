@@ -313,7 +313,7 @@ export const NOSOTRAS = {
     {
       nombre: 'Martina',
       descripcion: 'Desarrolladora web',
-      foto: '',
+      foto: '/socias/martina.webp',
     },
     {
       nombre: 'Julieta',

@@ -49,3 +49,6 @@ contexto_web_dospuntos.md
 # Config local de herramientas, no va al repo
 .atl/
 .vscode/
+
+# Fotos originales sin recortar: no se publican
+fotos-originales/

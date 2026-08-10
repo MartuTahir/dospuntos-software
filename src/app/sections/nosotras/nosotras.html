@@ -41,9 +41,11 @@
               class="mb-5 h-28 w-28 rounded-full object-cover grayscale contrast-105 ring-4 ring-primary-container/15"
             />
           } @else {
-            <!-- Sin foto cargada todavia: se muestra la inicial. -->
+            <!-- Sin foto cargada todavia: se muestra la inicial. El fondo va
+                 claro a proposito, para que pese parecido a una foto en blanco
+                 y negro y las dos tarjetas queden equilibradas. -->
             <span
-              class="mb-5 flex h-28 w-28 items-center justify-center rounded-full bg-primary-container text-headline-xl text-on-primary ring-4 ring-primary-container/15"
+              class="mb-5 flex h-28 w-28 items-center justify-center rounded-full bg-primary-fixed text-headline-xl text-primary ring-4 ring-primary-container/15"
               aria-hidden="true"
             >
               {{ socia.nombre.charAt(0) }}
