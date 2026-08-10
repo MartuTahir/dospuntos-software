@@ -1,7 +1,7 @@
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Instagram, LucideAngularModule, MessageCircle } from 'lucide-angular';
+import { LucideAngularModule, MessageCircle } from 'lucide-angular';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { FORMULARIO_URL } from '../../shared/site-content';
 import { Contacto } from './contacto';
@@ -19,7 +19,7 @@ describe('Contacto', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Contacto, LucideAngularModule.pick({ MessageCircle, Instagram })],
+      imports: [Contacto, LucideAngularModule.pick({ MessageCircle })],
       providers: [provideHttpClient(), provideHttpClientTesting()],
     }).compileComponents();
 

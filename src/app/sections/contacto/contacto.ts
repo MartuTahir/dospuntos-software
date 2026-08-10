@@ -7,8 +7,6 @@ import {
   CONTACTO,
   FORMULARIO_CLAVE,
   FORMULARIO_URL,
-  INSTAGRAM_URL,
-  INSTAGRAM_USUARIO,
   WHATSAPP_NUMERO,
   WHATSAPP_URL,
 } from '../../shared/site-content';
@@ -28,8 +26,6 @@ export class Contacto {
 
   protected readonly textos = CONTACTO;
   protected readonly whatsappUrl = WHATSAPP_URL;
-  protected readonly instagramUrl = INSTAGRAM_URL;
-  protected readonly instagramUsuario = INSTAGRAM_USUARIO;
 
   protected readonly estado = signal<EstadoEnvio>('inicial');
 

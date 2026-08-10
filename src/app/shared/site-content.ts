@@ -68,10 +68,6 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURICo
   WHATSAPP_MENSAJE,
 )}`;
 
-/** COMPLETAR: usuario de Instagram, sin el arroba. */
-export const INSTAGRAM_USUARIO = 'dospuntos.web';
-export const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_USUARIO}`;
-
 /** COMPLETAR: email. Es el canal secundario, WhatsApp va primero. */
 export const EMAIL = 'dos.puntos.jm@gmail.com';
 
@@ -302,12 +298,12 @@ export const NOSOTRAS = {
   socias: [
     {
       nombre: 'Martina',
-      descripcion: 'Me gusta pelearla hasta que cada detalle cierra.',
+      descripcion: 'Desarrolladora web',
       foto: '',
     },
     {
       nombre: 'Julieta',
-      descripcion: 'No suelto una web hasta que vuela en el celular.',
+      descripcion: 'Desarrolladora web',
       foto: '',
     },
   ] as Socia[],
