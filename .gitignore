@@ -45,3 +45,7 @@ Thumbs.db
 
 # Documento interno del estudio: no va al repo
 contexto_web_dospuntos.md
+
+# Config local de herramientas, no va al repo
+.atl/
+.vscode/
