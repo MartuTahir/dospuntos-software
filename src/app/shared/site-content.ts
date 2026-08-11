@@ -153,7 +153,7 @@ export const PAQUETES: Paquete[] = [
     nombre: 'Sitio informativo',
     bajada: 'Tu negocio contado completo',
     prefijoPrecio: 'Desde',
-    precio: '$300.000', // EDITABLE
+    precio: '$200.000', // EDITABLE
     paraQuien: 'Para comercios, consultorios y estudios profesionales.',
     incluye: [
       'Todo lo del plan anterior',
@@ -169,8 +169,8 @@ export const PAQUETES: Paquete[] = [
     id: 'premium',
     nombre: 'Sitio premium',
     bajada: 'Para negocios que necesitan algo más que una web',
-    prefijoPrecio: 'A medida',
-    precio: 'Consultar', // EDITABLE
+    prefijoPrecio: 'Desde',
+    precio: '$350.000', // EDITABLE
     paraQuien: 'Si querés que tus clientes reserven solos o mostrar un catálogo que cambia seguido.',
     incluye: [
       'Todo lo del plan anterior',

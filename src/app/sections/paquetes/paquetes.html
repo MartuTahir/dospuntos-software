@@ -35,8 +35,11 @@
           <h3 class="text-headline-md" [class]="paquete.destacado ? '' : 'text-primary'">
             {{ paquete.nombre }}
           </h3>
+          <!-- Alto minimo de dos lineas: si una bajada ocupa dos renglones y
+               otra uno, los precios quedan a distinta altura y se pierde la
+               comparacion de un vistazo entre las tres tarjetas. -->
           <p
-            class="mt-1 text-label-md font-normal"
+            class="mt-1 text-label-md font-normal sm:min-h-10"
             [class]="paquete.destacado ? 'opacity-80' : 'text-on-surface-variant'"
           >
             {{ paquete.bajada }}
