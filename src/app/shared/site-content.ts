@@ -318,7 +318,7 @@ export const NOSOTRAS = {
     {
       nombre: 'Julieta',
       descripcion: 'Desarrolladora web',
-      foto: '',
+      foto: '/socias/julieta.webp',
     },
   ] as Socia[],
 
