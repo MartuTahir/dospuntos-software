@@ -1,0 +1,36 @@
+# ============================================================
+#  Configuracion de despliegue en Netlify
+# ============================================================
+#  Con este archivo no hace falta configurar nada a mano en el
+#  panel: al conectar el repo, Netlify lee todo de aca.
+# ============================================================
+
+[build]
+  command = "npm run build"
+  # Angular 17+ deja el sitio dentro de un subdirectorio 'browser'.
+  # Apuntar a 'dist/dos-puntos' devuelve 404.
+  publish = "dist/dos-puntos/browser"
+
+[build.environment]
+  # El CLI de Angular 21 exige Node 24.15 o superior.
+  NODE_VERSION = "24"
+
+# Los archivos con hash en el nombre (main-ABC123.js) nunca cambian de
+# contenido: se cachean para siempre y la web abre al instante en la
+# segunda visita.
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# El index.html NO se cachea: es el que avisa que hay una version nueva.
+# Si se cacheara, los cambios tardarian dias en verse.
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
