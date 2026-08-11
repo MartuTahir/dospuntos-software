@@ -78,6 +78,20 @@
             }
           </ul>
 
+          @if (paquete.bonus) {
+            <p
+              class="mb-6 flex items-start gap-2 rounded-md p-3 text-label-md"
+              [class]="
+                paquete.destacado
+                  ? 'bg-white/15'
+                  : 'bg-secondary-container/30 text-on-secondary-container'
+              "
+            >
+              <lucide-icon name="Gift" [size]="18" class="mt-0.5 shrink-0" aria-hidden="true" />
+              <span>{{ paquete.bonus }}</span>
+            </p>
+          }
+
           <a
             [href]="whatsappUrl"
             target="_blank"

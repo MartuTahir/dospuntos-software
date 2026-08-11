@@ -22,6 +22,15 @@ export interface Paquete {
   textoBoton: string;
   destacado: boolean;
   etiqueta?: string;
+  /** Regalo que suma el paquete. Se muestra resaltado abajo de la lista. */
+  bonus?: string;
+}
+
+/** Servicio que se suma a cualquiera de los tres planes. */
+export interface Extra {
+  titulo: string;
+  detalle: string;
+  icono: string;
 }
 
 export interface Proyecto {
@@ -182,6 +191,50 @@ export const PAQUETES: Paquete[] = [
     ],
     textoBoton: 'Pedir presupuesto',
     destacado: false,
+    bonus: '3 meses de mantenimiento sin cargo',
+  },
+];
+
+// ============================================================
+//  4b. SERVICIOS EXTRA
+//  Se suman a cualquier plan. Van sin precio a proposito: varian
+//  demasiado segun el caso como para poner un "desde" honesto.
+//
+//  OJO CON EL TEXTO: aca no se nombran las herramientas (n8n, Zapier,
+//  Stripe, "CRM"). Al dueno de un negocio local esas palabras le dicen
+//  que es caro y complicado. Mercado Pago si se nombra: no es jerga,
+//  lo conoce todo el mundo y da confianza.
+// ============================================================
+
+export const EXTRAS_TITULO = 'Y si necesitás más, lo sumamos';
+export const EXTRAS_BAJADA =
+  'Estos servicios se agregan a cualquiera de los tres planes. Contanos qué necesitás y te decimos si tiene sentido para tu negocio.';
+export const EXTRAS_BOTON = 'Consultanos sin compromiso';
+
+export const EXTRAS: Extra[] = [
+  {
+    titulo: 'Cobrá online',
+    detalle:
+      'Que te paguen desde la web con Mercado Pago, sin que tengas que perseguir transferencias ni mandar alias.',
+    icono: 'CreditCard',
+  },
+  {
+    titulo: 'Que se haga solo',
+    detalle:
+      'Recordatorios de turno, mensajes de seguimiento y planillas que se completan sin que las toques.',
+    icono: 'Workflow',
+  },
+  {
+    titulo: 'Un asistente que contesta',
+    detalle:
+      'Responde las preguntas de siempre a cualquier hora: precios, horarios, cómo llegar. Vos atendés solo lo importante.',
+    icono: 'Bot',
+  },
+  {
+    titulo: 'Tu panel de control',
+    detalle:
+      'Quién te consultó, qué te compran y cómo venís mes a mes. Para decidir mirando números y no a ojo.',
+    icono: 'LayoutDashboard',
   },
 ];
 
@@ -348,8 +401,8 @@ export const ANIO_ACTUAL = new Date().getFullYear();
 
 /** Enlaces del menu de navegacion. */
 export const NAVEGACION = [
-  { texto: 'Paquetes', ancla: '#paquetes' },
   { texto: 'Trabajos', ancla: '#portafolio' },
-  { texto: 'Cómo trabajamos', ancla: '#proceso' },
+  { texto: 'Paquetes', ancla: '#paquetes' },
+  { texto: 'Extras', ancla: '#extras' },
   { texto: 'Nosotras', ancla: '#nosotras' },
 ];

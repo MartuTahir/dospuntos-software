@@ -1,0 +1,40 @@
+<section id="extras" class="px-margin-mobile py-20 md:px-margin-desktop md:py-section-padding">
+  <div class="mx-auto max-w-container-max">
+    <header appReveal class="mx-auto mb-12 max-w-2xl text-center">
+      <h2 class="mb-4 text-headline-lg-mobile text-primary md:text-headline-lg">{{ titulo }}</h2>
+      <p class="text-body-md text-on-surface-variant">{{ bajada }}</p>
+    </header>
+
+    <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      @for (extra of extras; track extra.titulo; let i = $index) {
+        <li
+          appReveal
+          [revealDelay]="i * 90"
+          class="flex flex-col rounded-xl border border-outline-variant/40 bg-surface-container-lowest p-6 shadow-ambient transition-all duration-300 hover:-translate-y-1 hover:shadow-ambient-lg"
+        >
+          <span
+            class="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-secondary-container/40 text-primary"
+            aria-hidden="true"
+          >
+            <lucide-icon [name]="extra.icono" [size]="24" />
+          </span>
+
+          <h3 class="mb-2 text-body-lg font-bold text-primary">{{ extra.titulo }}</h3>
+          <p class="text-body-md text-on-surface-variant">{{ extra.detalle }}</p>
+        </li>
+      }
+    </ul>
+
+    <div appReveal class="mt-12 text-center">
+      <a
+        [href]="whatsappUrl"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full border-2 border-primary-container px-8 py-4 text-body-lg font-semibold text-primary transition-colors hover:bg-primary-container hover:text-on-primary"
+      >
+        <lucide-icon name="MessageCircle" [size]="22" />
+        {{ textoBoton }}
+      </a>
+    </div>
+  </div>
+</section>

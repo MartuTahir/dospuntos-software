@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Contacto } from './sections/contacto/contacto';
+import { Extras } from './sections/extras/extras';
 import { Hero } from './sections/hero/hero';
 import { Nosotras } from './sections/nosotras/nosotras';
 import { Paquetes } from './sections/paquetes/paquetes';
@@ -16,8 +17,9 @@ import { WhatsappFab } from './shared/whatsapp-fab';
     SiteHeader,
     Hero,
     Valores,
-    Paquetes,
     Portafolio,
+    Paquetes,
+    Extras,
     Proceso,
     Nosotras,
     Contacto,
