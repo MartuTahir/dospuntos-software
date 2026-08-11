@@ -179,7 +179,7 @@ export const PAQUETES: Paquete[] = [
     nombre: 'Sitio premium',
     bajada: 'Para negocios que necesitan algo más que una web',
     prefijoPrecio: 'Desde',
-    precio: '$350.000', // EDITABLE
+    precio: '$400.000', // EDITABLE
     paraQuien: 'Si querés que tus clientes reserven solos o mostrar un catálogo que cambia seguido.',
     incluye: [
       'Todo lo del plan anterior',
