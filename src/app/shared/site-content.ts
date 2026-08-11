@@ -146,7 +146,7 @@ export const PAQUETES: Paquete[] = [
     nombre: 'Landing page',
     bajada: 'Una página que va al grano',
     prefijoPrecio: 'Desde',
-    precio: '$100.000', // EDITABLE
+    precio: '$150.000', // EDITABLE
     paraQuien: 'Si estás arrancando, tenés una promoción puntual o un servicio de urgencia.',
     incluye: [
       'Una página pensada para que te contacten',
@@ -162,7 +162,7 @@ export const PAQUETES: Paquete[] = [
     nombre: 'Sitio informativo',
     bajada: 'Tu negocio contado completo',
     prefijoPrecio: 'Desde',
-    precio: '$200.000', // EDITABLE
+    precio: '$250.000', // EDITABLE
     paraQuien: 'Para comercios, consultorios y estudios profesionales.',
     incluye: [
       'Todo lo del plan anterior',
