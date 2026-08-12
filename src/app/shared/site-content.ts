@@ -296,20 +296,15 @@ export const PROYECTOS: Proyecto[] = [
     imagen: '/patitas-sur.webp',
     enlace: 'https://patitasdelsur.netlify.app/',
   },
-  // ---------------------------------------------------------------
-  // PENDIENTE: Clinica Sonria todavia no esta terminada.
-  // Para que vuelva al sitio: borrar las barras de adelante, cargar la
-  // captura en `public` y poner la direccion real en `enlace`.
-  // ---------------------------------------------------------------
-  // {
-  //   nombre: 'Clínica Sonría',
-  //   rubro: 'Odontología',
-  //   paquete: 'Sitio premium',
-  //   resultado: 'Turnos online y notas de salud que la clínica actualiza sola.',
-  //   icono: 'Stethoscope',
-  //   imagen: '/clinica-sonria.webp',
-  //   enlace: 'https://clinicasonria.netlify.app/',
-  // },
+  {
+    nombre: 'Clínica Sonría',
+    rubro: 'Odontología',
+    paquete: 'Sitio premium',
+    resultado: 'Turnos online y notas de salud que la clínica actualiza sola.',
+    icono: 'Stethoscope',
+    imagen: '/sonria.webp',
+    enlace: 'https://sonriaclinicadental.netlify.app/',
+  },
 ];
 
 // ============================================================
