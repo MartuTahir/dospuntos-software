@@ -243,7 +243,7 @@ export const MANTENIMIENTO = {
   bajada:
     'Cualquiera de los tres planes puede sumar mantenimiento mensual. Vos te dedicás a tu negocio, del resto nos encargamos nosotras.',
   nombre: 'Mantenimiento mensual',
-  precio: '$30.000', // EDITABLE
+  precio: '$15.000', // EDITABLE
   periodo: '/mes',
   incluye: [
     'Tu web siempre online y funcionando',
